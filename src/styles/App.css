@@ -1,42 +1,5 @@
-/*
-### Primary
-
-- Soft Cyan (Full Slider Bar): hsl(174, 77%, 80%)
-- Strong Cyan (Slider Backround): hsl(174, 86%, 45%)
-- Light Grayish Red (Discount Background): hsl(14, 92%, 95%)
-- Light Red (Discount Text): hsl(15, 100%, 70%)
-- Pale Blue (CTA Text): hsl(226, 100%, 87%)
-
-### Neutral
-
-- White (Pricing Component Background): hsl (0, 0%, 100%)
-- Very Pale Blue (Main Background): hsl(230, 100%, 99%)
-- Light Grayish Blue (Empty Slider Bar): hsl(224, 65%, 95%)
-- Light Grayish Blue (Toggle Background): hsl(223, 50%, 87%)
-- Grayish Blue (Text): hsl(225, 20%, 60%)
-- Dark Desaturated Blue (Text & CTA Background): hsl(227, 35%, 25%)
-*/
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-.App {
-  width: 100vw;
-  height: 100vh;
-  padding: 30px;
-  background-color: #fafbff;
-  background-image: url("../images/bg-pattern.svg");
-  background-repeat: no-repeat;
-  background-size: 1400px 50%;
-}
-
-@media (min-width: 1400px) {
-  .App {
-    background-size: 100% 50%;
-  }
-}
+/*Colors*/
+/*Fonts*/
 .header {
   display: flex;
   flex-direction: column;
@@ -64,5 +27,214 @@
   font-size: 15px;
   color: #858fad;
 }
+@media (min-width: 500px) {
+  .header span {
+    flex-direction: row;
+    gap: 3px;
+  }
+}
+
+.pricing-box {
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.slider-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  color: #858fad;
+}
+.slider-area .slider-container {
+  width: 100%;
+}
+.slider-area .slider-container .slider {
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(to right, #a5f3eb 0% 50%, #eaeefb 50% 100%);
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  -webkit-appearance: none;
+}
+.slider-area .slider-container .slider::-webkit-slider-thumb {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background-color: #10d5c2;
+  background-image: url("../images/icon-slider.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  -webkit-appearance: none;
+}
+.slider-area span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.slider-area span .price {
+  font-size: 26px;
+  font-weight: 800;
+  color: #293356;
+}
+
+/*
+### Primary
+
+- Soft Cyan (Full Slider Bar): hsl(174, 77%, 80%)
+- Strong Cyan (Slider Backround): hsl(174, 86%, 45%)
+- Light Grayish Red (Discount Background): hsl(14, 92%, 95%)
+- Light Red (Discount Text): hsl(15, 100%, 70%)
+- Pale Blue (CTA Text): hsl(226, 100%, 87%)
+
+### Neutral
+
+- White (Pricing Component Background): hsl (0, 0%, 100%)
+- Very Pale Blue (Main Background): hsl(230, 100%, 99%)
+- Light Grayish Blue (Empty Slider Bar): hsl(224, 65%, 95%)
+- Light Grayish Blue (Toggle Background): hsl(223, 50%, 87%)
+- Grayish Blue (Text): hsl(225, 20%, 60%)
+- Dark Desaturated Blue (Text & CTA Background): hsl(227, 35%, 25%)
+*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100vw;
+  height: 100vh;
+  padding: 30px;
+  background-color: #fafbff;
+  background-image: url("../images/bg-pattern.svg");
+  background-repeat: no-repeat;
+  background-size: 1400px 50%;
+}
+@media (min-width: 1400px) {
+  .App {
+    background-size: 100% 50%;
+  }
+}
+
+/*input[type=range] {
+  -webkit-appearance: none;
+  position: relative
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 300px;
+  height: 2px;
+  border: none;
+  border-radius: 3px
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 12px;
+  width: 12px;
+  border-radius: 510%;
+  background: #141414;
+  border: 2px solid #515151;
+  margin-top: -5px;
+  cursor: pointer
+}
+
+.focused::-webkit-slider-thumb {
+  box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.15)
+}
+
+.clicked::-webkit-slider-thumb {
+  -webkit-transform: scale(1.5)
+}
+
+.disabled::-webkit-slider-thumb {
+  -webkit-transform: scale(0.9);
+  box-shadow: 0 0 0 3px #141414;
+  background: #515151 !important;
+  border-color: #515151 !important
+}
+
+input[type=range]:focus {
+  outline: none
+}
+
+.rangeM input[type=range].disabled::-webkit-slider-runnable-track {
+  background: #515151!important
+}
+
+.rangeM input[type=range]::-webkit-slider-thumb {
+  background: #3f51b5;
+  border-color: #3f51b5
+}
+
+.range:hover input[type=range]:before {
+  color: white;
+  content: '50';
+  position: absolute;
+  font-family: Roboto Slab;
+  top: -49px;
+  background: #3f51b5;
+  padding: 8px 0 3px;
+  font-size: 14px;
+  width: 30px;
+  text-align: center;
+  border-radius: 100% 100% 0 0
+}
+
+.range:hover input[type=range]:after {
+  content: '';
+  position: absolute;
+  top: -19px;
+  left: 50px;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 8px solid #3f51b5;
+  font-family: Roboto Slab
+}*/
+/*function PricingBox() {
+  return (
+    <div className="pricing-box">
+      <SliderArea />
+      <div className="toggle-area"></div>
+      <div className="info-area"></div>
+    </div>
+  );
+}
+
+function SliderArea() {
+  return (
+    <div className="slider-area">
+      <p className="pageviews">100K PAGEVIEWS</p>
+      <RangeSlider />
+      <span>
+        <p className="price">$16.00</p>
+        <p className="frequency">/month</p>
+      </span>
+    </div>
+  );
+}
+
+function RangeSlider() {
+  return (
+    <div className="slider-container">
+      <input type="range" min="1" max="5" className="slider" />
+    </div>
+  );
+}*/
 
 /*# sourceMappingURL=App.css.map */
