@@ -1,0 +1,39 @@
+@use 'vars';
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 150px;
+
+  font-family: vars.$font;
+
+  background-color: vars.$strongCyan;
+  background-image: url("../images/pattern-circles.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+
+  h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: vars.$darkDesaturatedBlue;
+  }
+
+  span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    font-size: 15px;
+    color: vars.$grayishBlue;
+
+    @media (min-width: 500px) {
+      flex-direction: row;
+      gap: 3px;
+    }
+  }
+}
