@@ -15,7 +15,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 40px;
 
   font-family: vars.$font;
   font-size: 15px;
@@ -49,8 +49,15 @@
         background-repeat: no-repeat;
         background-position: center;
         border-radius: 50%;
+        box-shadow: 0px 15px 25px 0 vars.$softCyan;
+
+        transition: background-color ease-in 0.3s;
 
         -webkit-appearance: none;
+
+        &:hover {
+          background-color: hsl(174, 86%, 40%);
+        }
       }
     }
   }
@@ -61,7 +68,7 @@
     gap: 5px;
 
     .price {
-      font-size: 26px;
+      font-size: 32px;
       font-weight: 800;
       color: vars.$darkDesaturatedBlue;
     }

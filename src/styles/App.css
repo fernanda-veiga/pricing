@@ -48,7 +48,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 40px;
   font-family: "Manrope", sans-serif;
   font-size: 15px;
   color: #858fad;
@@ -74,7 +74,12 @@
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 50%;
+  box-shadow: 0px 15px 25px 0 #a5f3eb;
+  transition: background-color ease-in 0.3s;
   -webkit-appearance: none;
+}
+.slider-area .slider-container .slider::-webkit-slider-thumb:hover {
+  background-color: #0ebeac;
 }
 .slider-area span {
   display: flex;
@@ -82,7 +87,7 @@
   gap: 5px;
 }
 .slider-area span .price {
-  font-size: 26px;
+  font-size: 32px;
   font-weight: 800;
   color: #293356;
 }
