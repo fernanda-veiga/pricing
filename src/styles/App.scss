@@ -1,5 +1,7 @@
 @use 'colors';
 
+$font: "Manrope", sans-serif;
+
 /*
 ### Primary
 
@@ -20,17 +22,58 @@
 */
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
+
+  padding: 0;
+  margin: 0;
 }
 
 .App {
   width: 100vw;
   height: 100vh;
+  padding: 30px;
 
-  background-image: url("../images/bg-pattern.svg");
   background-color: colors.$veryPaleBlue;
+  background-image: url("../images/bg-pattern.svg");
   background-repeat: no-repeat;
-  background-size: cover 50%;
+  background-size: 1400px 50%;
+}
+
+@media (min-width: 1400px) {
+  .App {
+    background-size: 100% 50%;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 150px;
+
+  font-family: $font;
+
+  background-color: colors.$strongCyan;
+  background-image: url("../images/pattern-circles.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+
+  h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: colors.$darkDesaturatedBlue;
+  }
+
+  span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    font-size: 15px;
+    color: colors.$grayishBlue;
+  }
 }

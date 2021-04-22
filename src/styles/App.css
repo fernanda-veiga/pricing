@@ -17,18 +17,52 @@
 - Dark Desaturated Blue (Text & CTA Background): hsl(227, 35%, 25%)
 */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 .App {
   width: 100vw;
   height: 100vh;
-  background-image: url("../images/bg-pattern.svg");
+  padding: 30px;
   background-color: #fafbff;
+  background-image: url("../images/bg-pattern.svg");
   background-repeat: no-repeat;
-  background-size: cover 50%;
+  background-size: 1400px 50%;
+}
+
+@media (min-width: 1400px) {
+  .App {
+    background-size: 100% 50%;
+  }
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 150px;
+  font-family: "Manrope", sans-serif;
+  background-color: #10d5c2;
+  background-image: url("../images/pattern-circles.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.header h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #293356;
+}
+.header span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 15px;
+  color: #858fad;
 }
 
 /*# sourceMappingURL=App.css.map */
