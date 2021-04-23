@@ -27,20 +27,11 @@
   font-size: 15px;
   color: #858fad;
 }
-@media (min-width: 500px) {
+@media (min-width: 560px) {
   .header span {
     flex-direction: row;
     gap: 3px;
   }
-}
-
-.pricing-box {
-  width: 100%;
-  max-width: 500px;
-  padding: 30px;
-  background-color: white;
-  border: 2px solid black;
-  border-radius: 10px;
 }
 
 .slider-area {
@@ -87,9 +78,122 @@
   gap: 5px;
 }
 .slider-area span .price {
-  font-size: 32px;
+  font-size: 40px;
   font-weight: 800;
   color: #293356;
+}
+
+@media (min-width: 560px) {
+  .slider-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+  }
+  .slider-area .pageviews {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .slider-area .pageviews {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .slider-area span {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    justify-content: flex-end;
+  }
+  .slider-area .slider-container {
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+}
+.toggle-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.toggle-area .toggle-area-monthly,
+.toggle-area .toggle-area-yearly {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+}
+.toggle-area .toggle-area-monthly p,
+.toggle-area .toggle-area-yearly p {
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+}
+.toggle-area .toggle-area-yearly {
+  position: relative;
+}
+.toggle-area .toggle-area-yearly .toggle-area-discount {
+  position: absolute;
+  left: 120%;
+  width: max-content;
+  padding: 3px 8px;
+  background-color: #feece7;
+  border-radius: 2em;
+}
+.toggle-area .toggle-area-yearly .toggle-area-discount p {
+  font-size: 10px;
+  font-weight: 800;
+  color: #ff8c66;
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 21px;
+}
+.toggle .toggle-checkbox {
+  width: 0;
+  height: 0;
+  outline: none;
+  opacity: 0;
+}
+.toggle .toggle-checkbox:checked + .toggle-slider {
+  background-color: #a5f3eb;
+}
+.toggle .toggle-checkbox:checked + .toggle-slider::before {
+  transform: translateX(21px);
+}
+.toggle .toggle-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  background-color: #cdd7ee;
+  border-radius: 20px;
+  transition: all ease-in 0.4s;
+}
+.toggle .toggle-slider::before {
+  position: absolute;
+  bottom: 3.5px;
+  left: 3.5px;
+  width: 14px;
+  height: 14px;
+  content: "";
+  background-color: white;
+  border-radius: 50%;
+  transition: all ease-in 0.4s;
+}
+
+.pricing-box {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
 }
 
 /*
@@ -134,112 +238,5 @@
     background-size: 100% 50%;
   }
 }
-
-/*input[type=range] {
-  -webkit-appearance: none;
-  position: relative
-}
-
-input[type=range]::-webkit-slider-runnable-track {
-  width: 300px;
-  height: 2px;
-  border: none;
-  border-radius: 3px
-}
-
-input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  border: none;
-  height: 12px;
-  width: 12px;
-  border-radius: 510%;
-  background: #141414;
-  border: 2px solid #515151;
-  margin-top: -5px;
-  cursor: pointer
-}
-
-.focused::-webkit-slider-thumb {
-  box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.15)
-}
-
-.clicked::-webkit-slider-thumb {
-  -webkit-transform: scale(1.5)
-}
-
-.disabled::-webkit-slider-thumb {
-  -webkit-transform: scale(0.9);
-  box-shadow: 0 0 0 3px #141414;
-  background: #515151 !important;
-  border-color: #515151 !important
-}
-
-input[type=range]:focus {
-  outline: none
-}
-
-.rangeM input[type=range].disabled::-webkit-slider-runnable-track {
-  background: #515151!important
-}
-
-.rangeM input[type=range]::-webkit-slider-thumb {
-  background: #3f51b5;
-  border-color: #3f51b5
-}
-
-.range:hover input[type=range]:before {
-  color: white;
-  content: '50';
-  position: absolute;
-  font-family: Roboto Slab;
-  top: -49px;
-  background: #3f51b5;
-  padding: 8px 0 3px;
-  font-size: 14px;
-  width: 30px;
-  text-align: center;
-  border-radius: 100% 100% 0 0
-}
-
-.range:hover input[type=range]:after {
-  content: '';
-  position: absolute;
-  top: -19px;
-  left: 50px;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-top: 8px solid #3f51b5;
-  font-family: Roboto Slab
-}*/
-/*function PricingBox() {
-  return (
-    <div className="pricing-box">
-      <SliderArea />
-      <div className="toggle-area"></div>
-      <div className="info-area"></div>
-    </div>
-  );
-}
-
-function SliderArea() {
-  return (
-    <div className="slider-area">
-      <p className="pageviews">100K PAGEVIEWS</p>
-      <RangeSlider />
-      <span>
-        <p className="price">$16.00</p>
-        <p className="frequency">/month</p>
-      </span>
-    </div>
-  );
-}
-
-function RangeSlider() {
-  return (
-    <div className="slider-container">
-      <input type="range" min="1" max="5" className="slider" />
-    </div>
-  );
-}*/
 
 /*# sourceMappingURL=App.css.map */

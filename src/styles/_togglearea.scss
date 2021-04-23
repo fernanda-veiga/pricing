@@ -1,0 +1,96 @@
+@use 'vars';
+
+.toggle-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+
+  .toggle-area-monthly,
+  .toggle-area-yearly {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+
+    p {
+      font-family: vars.$font;
+      font-size: 12px;
+    }
+  }
+
+  .toggle-area-yearly {
+    position: relative;
+
+    .toggle-area-discount {
+      position: absolute;
+      left: 120%;
+
+      width: max-content;
+      padding: 3px 8px;
+
+      background-color: vars.$lightGrayishRed;
+      border-radius: 2em;
+
+      p {
+        font-size: 10px;
+        font-weight: 800;
+        color: vars.$lightRed;
+      }
+    }
+  }
+}
+
+.toggle {
+  position: relative;
+
+  display: inline-block;
+  width: 42px;
+  height: 21px;
+
+  .toggle-checkbox {
+    width: 0;
+    height: 0;
+
+    outline: none;
+    opacity: 0;
+
+    &:checked + .toggle-slider {
+      background-color: vars.$softCyan;
+
+      &::before {
+        transform: translateX(21px);
+      }
+    }
+  }
+
+  .toggle-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    cursor: pointer;
+    background-color: vars.$lightGrayishBlue2;
+    border-radius: 20px;
+
+    transition: all ease-in 0.4s;
+
+    &::before {
+      position: absolute;
+      bottom: 3.5px;
+      left: 3.5px;
+
+      width: 14px;
+      height: 14px;
+
+      content: "";
+
+      background-color: vars.$white;
+      border-radius: 50%;
+
+      transition: all ease-in 0.4s;
+    }
+  }
+}
