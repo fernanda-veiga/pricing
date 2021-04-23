@@ -31,7 +31,7 @@
     font-size: 15px;
     color: vars.$grayishBlue;
 
-    @media (min-width: 500px) {
+    @media (min-width: 560px) {
       flex-direction: row;
       gap: 3px;
     }
